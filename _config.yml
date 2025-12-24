@@ -1,0 +1,7 @@
+title: "Shubhdeep Singh Portfolio"
+description: "Cybersecurity Portfolio of Shubhdeep Singh"
+url: "https://username.github.io" # replace with your GitHub Pages URL
+baseurl: "" # leave blank if username.github.io
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
