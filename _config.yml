@@ -1,0 +1,59 @@
+# Site settings
+title: "Shubhdeep Singh Portfolio"
+email: "your@email.com"
+description: "Cybersecurity Portfolio of Shubhdeep Singh | SOC Analyst | Threat Hunter"
+baseurl: "" # the subpath of your site, e.g., /portfolio
+url: "https://yourusername.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima # optional, but can be left or removed if using your custom layouts
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Defaults for pages and posts
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Shubhdeep Singh"
+
+# Include additional folders
+include:
+  - "_pages"
+  - "_includes"
+  - "_layouts"
+  - "assets"
+
+# Exclude unnecessary files
+exclude:
+  - "node_modules"
+  - "vendor"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+# Author info
+author:
+  name: "Shubhdeep Singh"
+  email: "your@email.com"
+
+# Social links
+social_links:
+  linkedin: "https://www.linkedin.com/in/yourprofile"
+  github: "https://github.com/yourusername"
+
+# SEO and Analytics (optional)
+seo:
+  type: "website"
+  twitter:
+    username: "@yourtwitterhandle"
