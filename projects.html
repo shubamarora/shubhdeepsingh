@@ -1,0 +1,20 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+
+<header>
+  <h1>Projects</h1>
+</header>
+
+<section id="projects">
+  <ul class="project-list">
+    {% for project in site.data.projects %}
+    <li>
+      <strong>{{ project.title }}</strong>
+      {{ project.description }}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

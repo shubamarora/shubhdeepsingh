@@ -1,0 +1,46 @@
+- name: "TryHackMe SOC Level 2"
+  image: "/assets/images/thmsocl2.png"
+  details:
+    - "Completed advanced SOC labs including threat hunting, malware analysis, and network traffic investigations. Gained hands-on experience in detecting and mitigating real-world security incidents using SIEM tools."
+
+- name: "ISO/IEC 27001 Information Security Associate"
+  image: "/assets/images/iso27001.png"
+  details:
+    - "Gained foundational knowledge of information security principles, risk management, and security controls implementation."
+
+- name: "Tata - Cybersecurity Analyst Job Simulation"
+  image: "/assets/images/tata_cyber_security_job_simulation.png"
+  details:
+    - "Gained hands-on understanding of Identity and Access Management (IAM) and the risks of improper privilege management. Learned to implement mitigation strategies such as least privilege access, role-based access control (RBAC), multi-factor authentication, and regular access reviews."
+
+- name: "MasterCard - Cybersecurity Job Simulation"
+  image: "/assets/images/mastercard_cyber_security_job_simulation.png"
+  details:
+    - "Gained Knowledge about phishing attempts and prevention mechanisms."
+
+- name: "Google Cybersecurity Professional Certificate"
+  image: "/assets/images/Coursera P609XDNAYNRH_page-0001.jpg"
+  details:
+    - "Completed hands-on labs and assessments in threat detection, incident response, network security, and SIEM tools."
+    - "Gained foundational knowledge in risk management, log analysis, and cybersecurity frameworks (NIST, CIA Triad)."
+    - "Used tools like Wireshark, Linux command line."
+
+- name: "TryHackMe Jr Penetration Tester"
+  image: "/assets/images/THM-3YZ6EL6IZ0.png"
+  details:
+    - "Gained hands-on experience in core penetration testing concepts, including enumeration, vulnerability assessment, privilege escalation, and exploitation techniques."
+    - "Performed real-world simulations involving web application testing, network scanning, password cracking, and reconnaissance using tools like Nmap, Burp Suite, Hydra, and Metasploit."
+    - "Learned to identify common vulnerabilities such as SQL injection, insecure authentication, misconfigurations, and file upload flaws, and practiced exploiting them in controlled environments."
+
+- name: "Udemy Wireshark: Packet Analysis and Ethical Hacking: Core Skills"
+  image: "/assets/images/UC-9092101c-6d82-44e8-a166-bd7506dc35a4.jpg"
+  details:
+    - "Gained practical experience in capturing and analyzing network traffic using Wireshark."
+    - "Identified anomalies, suspicious behavior, and attack signatures in packet data."
+
+- name: "TryHackMe SOC Level 1"
+  image: "/assets/images/THM-SNQMCHU5CJ.png"
+  details:
+    - "Developed foundational SOC analyst skills including log analysis, alert triage, and identifying common attack patterns in a monitored environment."
+    - "Gained hands-on experience with SIEM tools to investigate security events, detect suspicious activities, and understand real-world security workflows."
+    - "Practiced analyzing network traffic, endpoint logs, and authentication events to identify brute-force attempts, malware behavior, and lateral movement indicators."

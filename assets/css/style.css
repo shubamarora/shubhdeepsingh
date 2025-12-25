@@ -1,0 +1,420 @@
+/* ============================================
+   PORTFOLIO STYLESHEET WITH LIGHT/DARK MODE
+   ============================================ */
+
+/* Root variables for theming */
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --border-color: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #c9d1d9;
+  --accent-primary: #58a6ff;
+  --accent-hover: #79c0ff;
+  --link-default: #58a6ff;
+  --link-visited: #d29dff;
+  --link-hover: #79c0ff;
+  --link-active: #ffa657;
+}
+
+/* Light mode variables */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --border-color: #d0d7de;
+  --text-primary: #24292f;
+  --text-secondary: #57606a;
+  --accent-primary: #0969da;
+  --accent-hover: #0550ae;
+  --link-default: #0969da;
+  --link-visited: #8250df;
+  --link-hover: #0550ae;
+  --link-active: #bc4c00;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-secondary);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+nav a {
+  margin: 0 15px;
+  color: var(--link-default);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--link-hover);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  right: 20px;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 42px;
+  margin: 0;
+  color: var(--accent-primary);
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--accent-primary);
+  border-left: 5px solid var(--accent-primary);
+  padding-left: 10px;
+}
+
+/* ============================================
+   LINK STATES
+   ============================================ */
+
+a:link {
+  color: var(--link-default);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-visited);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--link-active);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* ============================================
+   WRITE-UPS PAGE STYLES
+   ============================================ */
+
+.writeups-list {
+  list-style: none;
+  padding: 0;
+}
+
+.writeups-list li {
+  background: var(--bg-secondary);
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  line-height: 1.6;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  padding-left: 45px;
+}
+
+.writeups-list li::before {
+  content: "📄";
+  position: absolute;
+  left: 15px;
+  font-size: 18px;
+}
+
+.writeups-list li:hover {
+  transform: translateX(5px);
+  background: var(--border-color);
+}
+
+.writeups-list li a {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+.writeups-list li a:hover {
+  color: var(--accent-primary);
+}
+
+/* ============================================
+   SKILLS PAGE STYLES
+   ============================================ */
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background: var(--bg-secondary);
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  line-height: 1.6;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  padding-left: 45px;
+}
+
+.skills-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 15px;
+  color: var(--accent-primary);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.skills-list li:hover {
+  transform: translateX(5px);
+  border-color: var(--accent-primary);
+}
+
+.skills-list li strong {
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+/* ============================================
+   PROJECTS PAGE STYLES
+   ============================================ */
+
+.project-list {
+  list-style: none;
+  padding: 0;
+}
+
+.project-list li {
+  background: var(--bg-secondary);
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  line-height: 1.6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-list li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(88, 166, 255, 0.2);
+}
+
+[data-theme="light"] .project-list li:hover {
+  box-shadow: 0 2px 8px rgba(9, 105, 218, 0.15);
+}
+
+.project-list li strong {
+  color: var(--accent-primary);
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* ============================================
+   CONTACT PAGE STYLES
+   ============================================ */
+
+.contact-box {
+  background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.contact-box p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+.contact-box a.contact-link {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .contact-box a.contact-link {
+  color: #059669;
+}
+
+.contact-box a.contact-link:hover {
+  color: #34d399;
+  text-decoration: underline;
+}
+
+[data-theme="light"] .contact-box a.contact-link:hover {
+  color: #10b981;
+}
+
+.contact-box a.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-box a.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   CERTIFICATIONS PAGE STYLES
+   ============================================ */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: var(--bg-secondary);
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-size: 18px;
+}
+
+.certificate {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.cert-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="light"] .cert-img {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cert-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(88, 166, 255, 0.3);
+}
+
+.cert-info {
+  width: 100%;
+}
+
+.cert-info p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
+  nav a {
+    margin: 5px 10px;
+  }
+  
+  .theme-toggle {
+    position: static;
+    margin: 10px auto 0;
+  }
+  
+  header h1 {
+    font-size: 32px;
+  }
+  
+  header p {
+    font-size: 16px;
+  }
+  
+  .certificate {
+    padding: 0 10px;
+  }
+  
+  section {
+    padding: 30px 15px;
+  }
+}

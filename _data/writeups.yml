@@ -1,0 +1,20 @@
+- name: "Wireshark"
+  description: "Used Wireshark to analyze the Packet File and found the C2 in Simulated attack."
+
+- name: "Splunk SIEM"
+  description: "Created queries to detect brute-force attempts, privilege escalation, and unusual logins in real-time."
+
+- name: "Windows Security"
+  description: "Investigated event logs to detect unauthorized access attempts and applied security configurations."
+
+- name: "Threat Hunting"
+  description: "Used logs and SIEM data to track suspicious PowerShell activity and detect malware execution."
+
+- name: "Malware Analysis"
+  description: "Executed malware samples in a safe lab environment, extracted IOCs, and documented findings."
+
+- name: "Nmap & Network Scanning"
+  description: "Performed vulnerability scans to identify open ports and weak network configurations."
+
+- name: "MITRE ATT&CK Mapping"
+  description: "Mapped real-world attack techniques observed in labs to the MITRE ATT&CK framework."

@@ -1,0 +1,11 @@
+- title: "SIEM Log Monitoring Lab"
+  description: "Configured Wazuh SIEM to detect brute-force and privilege escalation events."
+
+- title: "Phishing Email Analysis"
+  description: "Analyzed phishing samples, extracted IOCs, and documented response actions."
+
+- title: "Threat Hunting Project"
+  description: "Used Sysmon logs and KQL/Splunk queries to detect suspicious PowerShell activity."
+
+- title: "Network Traffic Analysis"
+  description: "Investigated packet captures for C2 communication using Wireshark & Suricata."

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Skills
+permalink: /skills/
+---
+
+<header>
+  <h1>Skills</h1>
+</header>
+
+<section id="skills">
+  <ul class="skills-list">
+    {% for skill in site.data.skills %}
+    <li>
+      <strong>{{ skill.name }}:</strong> {{ skill.description }}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
