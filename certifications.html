@@ -1,0 +1,28 @@
+---
+layout: default
+title: Certifications
+permalink: /certifications/
+---
+
+<header>
+  <h1>Certifications</h1>
+</header>
+
+<section id="certifications">
+  <ul>
+    {% for cert in site.data.certifications %}
+    <li>
+      <b>{{ cert.name }}</b>
+      <div class="certificate">
+        <img src="{{ cert.image | relative_url }}" alt="{{ cert.name }}" class="cert-img" loading="lazy">
+        <div class="cert-info">
+          {% for detail in cert.details %}
+          <p>{{ detail }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </li>
+    <br>
+    {% endfor %}
+  </ul>
+</section>
