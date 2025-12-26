@@ -1,0 +1,38 @@
+---
+layout: writeup
+title: "Phishing Email Analysis"
+category: "Email Security"
+date: "January 2025"
+author: "Shubhdeep Singh"
+
+summary: "Analysis of a phishing email targeting employees with fake IT support request."
+
+key_finding: "Email contained malicious link to credential harvesting site."
+
+sections:
+  - title: "Email Details"
+    list:
+      - "<strong>From:</strong> it-support@fake-domain.com"
+      - "<strong>Subject:</strong> URGENT: Password Reset Required"
+      - "<strong>Received:</strong> Jan 15, 2025 09:30 AM"
+
+  - title: "Red Flags Identified"
+    list:
+      - "Sender domain doesn't match company domain"
+      - "Urgency tactics used ('within 24 hours')"
+      - "Grammar errors in email body"
+      - "Suspicious link destination"
+
+  - title: "Link Analysis"
+    code: |
+      Original: https://company-login.com
+      Redirects to: http://phishing-site.tk/login
+
+iocs:
+  - type: "Domain"
+    value: "phishing-site.tk"
+  - type: "Email"
+    value: "it-support@fake-domain.com"
+
+conclusion: "Phishing attempt successfully identified and blocked. Domain added to blacklist, employees notified."
+---
