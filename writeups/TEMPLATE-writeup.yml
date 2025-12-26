@@ -1,0 +1,140 @@
+---
+layout: writeup
+title: "Your Write-up Title Here"
+category: "Category Here (e.g., SOC Analysis, Malware Analysis)"
+date: "Month Year"
+author: "Your Name"
+
+# Executive Summary (Required)
+summary: "Brief overview of what this writeup covers. 2-3 sentences explaining the main topic."
+
+# Key Finding (Optional - delete if not needed)
+key_finding: "Main takeaway or important finding here."
+
+# Main Content Sections (Add as many as you need)
+sections:
+  
+  # Example: Simple text section
+  - title: "Section Title Here"
+    content: "Your paragraph content here. You can write multiple sentences."
+
+  # Example: Section with bullet list
+  - title: "Another Section"
+    content: "Intro text for this section."
+    list:
+      - "Bullet point 1"
+      - "Bullet point 2 with <strong>bold text</strong>"
+      - "Bullet point 3"
+
+  # Example: Section with numbered list
+  - title: "Step-by-Step Process"
+    ordered_list:
+      - "Step 1: Do this"
+      - "Step 2: Then do this"
+      - "Step 3: Finally this"
+
+  # Example: Section with code block
+  - title: "Technical Details"
+    content: "Here's the command I used:"
+    code: |
+      command line here
+      more commands
+      log entries
+      any technical text
+
+  # Example: Section with subsections
+  - title: "Analysis"
+    subsections:
+      - title: "Subsection 1"
+        content: "Details here"
+        list:
+          - "Point A"
+          - "Point B"
+      
+      - title: "Subsection 2"
+        code: |
+          code here
+
+  # Example: Section with recommendations box
+  - title: "Recommendations"
+    recommendation:
+      title: "Actions to Take:"
+      items:
+        - "Recommendation 1"
+        - "Recommendation 2"
+        - "Recommendation 3"
+
+# MITRE ATT&CK Mapping (Optional - delete if not needed)
+mitre_attack:
+  - type: "Tactic"
+    name: "Tactic Name"
+    id: "TA0000"
+  - type: "Technique"
+    name: "Technique Name"
+    id: "T0000"
+
+# Indicators of Compromise (Optional - delete if not needed)
+iocs:
+  - type: "IP Address"
+    value: "X.X.X.X"
+  - type: "File Hash"
+    value: "abc123..."
+  - type: "Domain"
+    value: "malicious-site.com"
+
+# Conclusion (Required)
+conclusion: "Wrap up your writeup with key takeaways and final thoughts. What did you learn? What should readers remember?"
+---
+
+# ========================================
+# QUICK REFERENCE GUIDE
+# ========================================
+#
+# SECTION TYPES YOU CAN USE:
+#
+# 1. SIMPLE TEXT:
+#   - title: "Title"
+#     content: "Your text here"
+#
+# 2. BULLET LIST:
+#   - title: "Title"
+#     list:
+#       - "Item 1"
+#       - "Item 2"
+#
+# 3. NUMBERED LIST:
+#   - title: "Title"
+#     ordered_list:
+#       - "Step 1"
+#       - "Step 2"
+#
+# 4. CODE BLOCK:
+#   - title: "Title"
+#     code: |
+#       your code here
+#       multiple lines ok
+#
+# 5. WITH SUBSECTIONS:
+#   - title: "Main Title"
+#     subsections:
+#       - title: "Sub 1"
+#         content: "text"
+#       - title: "Sub 2"
+#         list:
+#           - "item"
+#
+# 6. RECOMMENDATIONS BOX:
+#   - title: "Title"
+#     recommendation:
+#       title: "Box Title"
+#       items:
+#         - "Item 1"
+#
+# TIPS:
+# - Delete sections you don't need
+# - Copy-paste section types as needed
+# - Use <strong>text</strong> for bold
+# - Use | for multi-line text
+# - Indent with 2 spaces (YAML requirement)
+#
+# ========================================
