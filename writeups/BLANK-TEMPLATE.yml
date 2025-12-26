@@ -1,0 +1,145 @@
+---
+layout: single-writeup-layout
+title: "YOUR TITLE HERE"
+category: "Category Here (e.g., SOC Analysis, Malware Analysis)"
+date: "Month Year"
+author: "Shubhdeep Singh"
+
+# Brief summary (2-3 sentences)
+summary: "Write a brief overview of what this writeup covers."
+
+# Optional: Main finding or key takeaway
+key_finding: "Main important finding here."
+
+# Your content sections - add as many as you need
+sections:
+  
+  # EXAMPLE 1: Simple paragraph
+  - title: "Background"
+    content: "Write your paragraph text here. Explain the background or context."
+
+  # EXAMPLE 2: Bullet list
+  - title: "Key Points"
+    list:
+      - "First point here"
+      - "Second point with <strong>bold text</strong>"
+      - "Third point here"
+
+  # EXAMPLE 3: Numbered steps
+  - title: "Process Steps"
+    ordered_list:
+      - "Step 1: Do this first"
+      - "Step 2: Then do this"
+      - "Step 3: Finally do this"
+
+  # EXAMPLE 4: Code or commands
+  - title: "Commands Used"
+    code: |
+      command line 1
+      command line 2
+      log output here
+
+  # EXAMPLE 5: Section with subsections
+  - title: "Detailed Analysis"
+    subsections:
+      - title: "Part A"
+        content: "Details about part A"
+      - title: "Part B"
+        list:
+          - "Point 1"
+          - "Point 2"
+
+  # EXAMPLE 6: Recommendations box (blue box)
+  - title: "Recommendations"
+    recommendation:
+      title: "Actions to Take:"
+      items:
+        - "Recommendation 1"
+        - "Recommendation 2"
+        - "Recommendation 3"
+
+# Optional: MITRE ATT&CK techniques
+mitre:
+  - type: "Tactic"
+    name: "Initial Access"
+    id: "TA0001"
+  - type: "Technique"
+    name: "Phishing"
+    id: "T1566"
+
+# Optional: Indicators of Compromise
+iocs:
+  - type: "IP Address"
+    value: "192.168.1.100"
+  - type: "Domain"
+    value: "malicious-site.com"
+  - type: "File Hash"
+    value: "abc123def456"
+
+# Final conclusion
+conclusion: "Summarize what you learned and key takeaways. What should readers remember from this writeup?"
+---
+
+# ============================================================
+# QUICK REFERENCE GUIDE FOR YAML SECTIONS
+# ============================================================
+#
+# SECTION TYPES YOU CAN USE:
+#
+# 1. SIMPLE TEXT PARAGRAPH:
+#   - title: "Section Title"
+#     content: "Your text here"
+#
+# 2. BULLET LIST:
+#   - title: "Section Title"
+#     list:
+#       - "Item 1"
+#       - "Item 2"
+#
+# 3. NUMBERED LIST:
+#   - title: "Section Title"
+#     ordered_list:
+#       - "Step 1"
+#       - "Step 2"
+#
+# 4. CODE BLOCK (commands, logs, etc):
+#   - title: "Section Title"
+#     code: |
+#       your code here
+#       multiple lines ok
+#       command output here
+#
+# 5. SECTION WITH SUBSECTIONS:
+#   - title: "Main Section"
+#     subsections:
+#       - title: "Subsection 1"
+#         content: "text here"
+#       - title: "Subsection 2"
+#         list:
+#           - "item A"
+#           - "item B"
+#
+# 6. RECOMMENDATIONS BOX (blue box):
+#   - title: "Section Title"
+#     recommendation:
+#       title: "Box Title:"
+#       items:
+#         - "Recommendation 1"
+#         - "Recommendation 2"
+#
+# ============================================================
+# FORMATTING TIPS:
+# ============================================================
+#
+# - Use <strong>text</strong> for bold
+# - Use 2 spaces for indentation (YAML requirement)
+# - Use | after "code:" for multi-line code blocks
+# - Delete sections you don't need
+# - Copy-paste section types as needed
+#
+# FILE NAMING:
+# - Use lowercase with hyphens
+# - Good: 03-phishing-analysis.yml
+# - Bad: Phishing Analysis.yml
+#
+# ============================================================
