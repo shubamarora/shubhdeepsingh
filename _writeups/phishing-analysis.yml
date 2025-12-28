@@ -1,5 +1,5 @@
 ---
-layout: writeup
+layout: single-writeup-layout
 title: "Phishing Email Analysis"
 category: "Email Security"
 date: "January 2025"
@@ -35,4 +35,5 @@ iocs:
     value: "it-support@fake-domain.com"
 
 conclusion: "Phishing attempt successfully identified and blocked. Domain added to blacklist, employees notified."
+
 ---
