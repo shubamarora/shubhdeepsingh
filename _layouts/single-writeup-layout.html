@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+<header>
+  <h1>{{ page.title }}</h1>
+  <p style="color: var(--text-secondary); font-style: italic;">
+    {{ page.category }} | {{ page.date }} | Author: {{ page.author }}
+  </p>
+</header>
+
+<section class="writeup-content">
+  
+  <h2>1. Executive Summary</h2>
+  <p>{{ page.summary }}</p>
+  
+  {% if page.key_finding %}
+  <div class="alert-box">
+    <strong>Key Finding:</strong> {{ page.key_finding }}
+  </div>
+  {% endif %}
+
+  {% for section in page.sections %}
+  <h2>{{ forloop.index | plus: 1 }}. {{ section.title }}</h2>
+  
+  {% if section.content %}
+  <p>{{ section.content }}</p>
+  {% endif %}
+  
+  {% if section.subsections %}
+    {% for subsection in section.subsections %}
+    <h3>{{ subsection.title }}</h3>
+    
+    {% if subsection.content %}
+    <p>{{ subsection.content }}</p>
+    {% endif %}
+    
+    {% if subsection.list %}
+    <ul>
+      {% for item in subsection.list %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if subsection.ordered_list %}
+    <ol>
+      {% for item in subsection.ordered_list %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    
+    {% if subsection.code %}
+    <div class="code-block">
+      <pre><code>{{ subsection.code }}</code></pre>
+    </div>
+    {% endif %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if section.list %}
+  <ul>
+    {% for item in section.list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  
+  {% if section.ordered_list %}
+  <ol>
+    {% for item in section.ordered_list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+  
+  {% if section.code %}
+  <div class="code-block">
+    <pre><code>{{ section.code }}</code></pre>
+  </div>
+  {% endif %}
+  
+  {% if section.recommendation %}
+  <div class="recommendation-box">
+    <h4>{{ section.recommendation.title }}</h4>
+    <ul>
+      {% for item in section.recommendation.items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% endfor %}
+
+  {% if page.mitre %}
+  <h2>{{ page.sections.size | plus: 2 }}. MITRE ATT&CK Mapping</h2>
+  <ul>
+    {% for technique in page.mitre %}
+    <li><strong>{{ technique.type }}:</strong> {{ technique.name }} {% if technique.id %}({{ technique.id }}){% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.iocs %}
+  <h2>{{ page.sections.size | plus: 3 }}. Indicators of Compromise (IOCs)</h2>
+  <ul>
+    {% for ioc in page.iocs %}
+    <li><strong>{{ ioc.type }}:</strong> {{ ioc.value }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <h2>{{ page.sections.size | plus: 4 }}. Conclusion</h2>
+  <p>{{ page.conclusion }}</p>
+
+  <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+    <a href="{{ '/writeups' | relative_url }}" class="btn-back">Back to Write-ups</a>
+  </div>
+
+</section>
