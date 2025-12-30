@@ -1,0 +1,12 @@
+---
+layout: single-writeup-layout
+title: "Test"
+category: "Test"
+date: "Jan 2025"
+author: "Test"
+summary: "Test"
+sections:
+  - title: "Test"
+    content: "Test content here"
+conclusion: "Test"
+---
