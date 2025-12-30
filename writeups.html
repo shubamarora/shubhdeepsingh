@@ -1,0 +1,392 @@
+---
+layout: default
+title: Write-ups
+permalink: /writeups/
+---
+
+<header>
+  <h1>Write-ups</h1>
+  <p style="color: var(--text-secondary);">Click on any write-up to expand and read the full details</p>
+</header>
+
+<section id="writeups" style="max-width: 1000px; margin: 0 auto; padding: 20px;">
+
+  <!-- Write-up 1: Phishing Email Analysis -->
+  <div class="writeup-accordion">
+    <button class="accordion-header">
+      <span class="accordion-icon">📄</span>
+      <span class="accordion-title">Phishing Email Analysis</span>
+      <span class="accordion-toggle">+</span>
+    </button>
+    <div class="accordion-content">
+      <div class="writeup-meta">
+        <span><strong>Category:</strong> Email Security</span>
+        <span><strong>Date:</strong> January 2025</span>
+        <span><strong>Author:</strong> Shubhdeep Singh</span>
+      </div>
+      
+      <h3>📋 Summary</h3>
+      <p>Analysis of a phishing email targeting employees with fake IT support request.</p>
+      
+      <div class="alert-box">
+        <strong>⚠️ Key Finding:</strong> Email contained malicious link to credential harvesting site.
+      </div>
+      
+      <h3>📧 Email Details</h3>
+      <ul>
+        <li><strong>From:</strong> it-support@fake-domain.com</li>
+        <li><strong>Subject:</strong> URGENT: Password Reset Required</li>
+        <li><strong>Received:</strong> Jan 15, 2025 09:30 AM</li>
+      </ul>
+      
+      <h3>🚩 Red Flags Identified</h3>
+      <ul>
+        <li>Sender domain doesn't match company domain</li>
+        <li>Urgency tactics used ('within 24 hours')</li>
+        <li>Grammar errors in email body</li>
+        <li>Suspicious link destination</li>
+      </ul>
+      
+      <h3>🔗 Link Analysis</h3>
+      <div class="code-block">
+        <pre><code>Original: https://company-login.com
+Redirects to: http://phishing-site.tk/login</code></pre>
+      </div>
+      
+      <h3>🎯 IOCs (Indicators of Compromise)</h3>
+      <ul>
+        <li><strong>Domain:</strong> phishing-site.tk</li>
+        <li><strong>Email:</strong> it-support@fake-domain.com</li>
+      </ul>
+      
+      <h3>✅ Conclusion</h3>
+      <p>Phishing attempt successfully identified and blocked. Domain added to blacklist, employees notified.</p>
+    </div>
+  </div>
+
+  <!-- Write-up 2: Brute-Force Attack Detection -->
+  <div class="writeup-accordion">
+    <button class="accordion-header">
+      <span class="accordion-icon">📄</span>
+      <span class="accordion-title">Case Study: Detecting Brute-Force Attacks using Splunk</span>
+      <span class="accordion-toggle">+</span>
+    </button>
+    <div class="accordion-content">
+      <div class="writeup-meta">
+        <span><strong>Category:</strong> SOC Analysis</span>
+        <span><strong>Date:</strong> December 2024</span>
+        <span><strong>Author:</strong> Shubhdeep Singh</span>
+      </div>
+      
+      <h3>📋 Summary</h3>
+      <p>Real-world incident where a brute-force attack was detected and mitigated using Splunk SIEM. The attack targeted SSH services on a production Linux server, with over 5,000 failed login attempts detected within a 2-hour window.</p>
+      
+      <div class="alert-box">
+        <strong>⚠️ Key Finding:</strong> Attacker attempted to compromise SSH access using credential stuffing from IP address 185.220.101.45 (TOR exit node).
+      </div>
+      
+      <h3>⏱️ Attack Timeline</h3>
+      <ul>
+        <li><strong>14:23 UTC</strong> - First failed login attempt detected</li>
+        <li><strong>14:25 UTC</strong> - Automated Splunk alert triggered</li>
+        <li><strong>14:30 UTC</strong> - SOC analyst begins investigation</li>
+        <li><strong>15:45 UTC</strong> - Source IP blocked at firewall level</li>
+        <li><strong>16:20 UTC</strong> - Attack ceases, total: 5,247 attempts</li>
+      </ul>
+      
+      <h3>🔍 Detection Method</h3>
+      <p>The attack was detected using a custom Splunk query monitoring authentication logs:</p>
+      <div class="code-block">
+        <pre><code>index=linux sourcetype=linux_secure "Failed password"
+| stats count by src_ip, user
+| where count > 10
+| sort -count</code></pre>
+      </div>
+      
+      <h3>📊 Analysis Results</h3>
+      <ul>
+        <li><strong>Attack Vector:</strong> SSH (Port 22)</li>
+        <li><strong>Source IP:</strong> 185.220.101.45 (TOR exit node, Germany)</li>
+        <li><strong>Target Usernames:</strong> 47 unique usernames attempted</li>
+        <li><strong>Attack Rate:</strong> Average 45 attempts per minute</li>
+      </ul>
+      
+      <h3>💡 Recommendations</h3>
+      <div class="recommendation-box">
+        <ul>
+          <li>Implement rate limiting on SSH service (fail2ban)</li>
+          <li>Enable MFA for all SSH access</li>
+          <li>Disable root login via SSH</li>
+          <li>Change SSH default port from 22 to non-standard port</li>
+        </ul>
+      </div>
+      
+      <h3>✅ Conclusion</h3>
+      <p>The brute-force attack was successfully detected and mitigated with no compromise of systems or data.</p>
+    </div>
+  </div>
+
+  <!-- Write-up 3: Malware Analysis -->
+  <div class="writeup-accordion">
+    <button class="accordion-header">
+      <span class="accordion-icon">📄</span>
+      <span class="accordion-title">Malware Analysis Lab Report</span>
+      <span class="accordion-toggle">+</span>
+    </button>
+    <div class="accordion-content">
+      <div class="writeup-meta">
+        <span><strong>Category:</strong> Malware Analysis</span>
+        <span><strong>Date:</strong> December 2024</span>
+        <span><strong>Author:</strong> Shubhdeep Singh</span>
+      </div>
+      
+      <h3>📋 Summary</h3>
+      <p>Analysis of a suspicious executable file identified during routine security monitoring in an isolated lab environment.</p>
+      
+      <div class="alert-box">
+        <strong>⚠️ Verdict:</strong> Malicious - Remote Access Trojan (RAT) with keylogging and data exfiltration capabilities.
+      </div>
+      
+      <h3>📄 Sample Information</h3>
+      <ul>
+        <li><strong>Filename:</strong> invoice_2024.exe</li>
+        <li><strong>File Type:</strong> PE32 executable</li>
+        <li><strong>File Size:</strong> 2.4 MB</li>
+        <li><strong>MD5:</strong> d41d8cd98f00b204e9800998ecf8427e</li>
+      </ul>
+      
+      <h3>🔬 Static Analysis</h3>
+      <ul>
+        <li>Suspicious section names: .enigma, .rsrc (encrypted resources)</li>
+        <li>High entropy in .text section (7.8/8.0) - indicates packing</li>
+        <li>Imports suspicious APIs: CreateRemoteThread, VirtualAllocEx</li>
+        <li>No valid digital signature</li>
+      </ul>
+      
+      <h3>⚙️ Dynamic Analysis - Behavior</h3>
+      <ul>
+        <li>Spawns child process: svchost.exe (process injection)</li>
+        <li>Creates persistence registry key in HKCU Run</li>
+        <li>Establishes connection to 192.168.1.100:4444 (C2 server)</li>
+        <li>Creates keylogger file: C:\Users\Public\logs\keylog.txt</li>
+      </ul>
+      
+      <h3>🎯 IOCs</h3>
+      <ul>
+        <li><strong>MD5:</strong> d41d8cd98f00b204e9800998ecf8427e</li>
+        <li><strong>C2 IP:</strong> 192.168.1.100</li>
+        <li><strong>C2 Port:</strong> 4444</li>
+        <li><strong>File Path:</strong> C:\Users\Public\WindowsUpdate.exe</li>
+      </ul>
+      
+      <h3>✅ Conclusion</h3>
+      <p>The analyzed sample is a Remote Access Trojan designed to establish persistent access, capture keystrokes, and exfiltrate data. The threat has been contained and IOCs shared with the security team.</p>
+    </div>
+  </div>
+
+</section>
+
+<style>
+/* Accordion Styles */
+.writeup-accordion {
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.writeup-accordion:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 8px rgba(88, 166, 255, 0.2);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.accordion-header:hover {
+  background: var(--border-color);
+}
+
+.accordion-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.accordion-title {
+  flex: 1;
+  font-weight: bold;
+  color: var(--accent-primary);
+}
+
+.accordion-toggle {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 20px;
+}
+
+.accordion-content.active {
+  max-height: 5000px;
+  padding: 20px;
+}
+
+.writeup-accordion.active .accordion-toggle {
+  transform: rotate(45deg);
+}
+
+.writeup-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 15px;
+  background: var(--bg-primary);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.accordion-content h3 {
+  color: var(--accent-primary);
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.accordion-content ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.accordion-content ul li {
+  margin: 8px 0;
+  line-height: 1.6;
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: var(--text-secondary);
+  list-style: disc;
+}
+
+.accordion-content p {
+  line-height: 1.8;
+  margin: 10px 0;
+  color: var(--text-secondary);
+}
+
+/* Alert and Recommendation Boxes */
+.alert-box {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  color: #856404;
+}
+
+[data-theme="dark"] .alert-box {
+  background: #3d3419;
+  color: #ffd966;
+}
+
+.recommendation-box {
+  background: #d1ecf1;
+  border-left: 4px solid #0c5460;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  color: #0c5460;
+}
+
+[data-theme="dark"] .recommendation-box {
+  background: #1a3a40;
+  color: #a8dadc;
+}
+
+.code-block {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+[data-theme="light"] .code-block {
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+.code-block pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .accordion-icon {
+    font-size: 20px;
+  }
+  
+  .writeup-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+</style>
+
+<script>
+// Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const accordion = this.parentElement;
+      const content = accordion.querySelector('.accordion-content');
+      const isActive = accordion.classList.contains('active');
+      
+      // Close all accordions
+      document.querySelectorAll('.writeup-accordion').forEach(acc => {
+        acc.classList.remove('active');
+        acc.querySelector('.accordion-content').classList.remove('active');
+      });
+      
+      // Open clicked accordion if it wasn't active
+      if (!isActive) {
+        accordion.classList.add('active');
+        content.classList.add('active');
+      }
+    });
+  });
+});
+</script>
