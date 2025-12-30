@@ -17,12 +17,6 @@ author:
 markdown: kramdown
 permalink: pretty
 
-# Collections for write-ups
-collections:
-  writeups:
-    output: true
-    permalink: /writeups/:name/
-
 # Debug settings
 verbose: true
 incremental: false
@@ -33,4 +27,5 @@ exclude:
   - Gemfile
 
   - Gemfile.lock
+
 
