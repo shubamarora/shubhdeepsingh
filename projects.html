@@ -26,7 +26,7 @@ permalink: /projects/
       </div>
       
       <h3>📋 Overview</h3>
-      <p>Configured Wazuh SIEM to detect brute-force and privilege escalation events in a lab environment. Implemented custom detection rules and automated alerting for security incidents.</p>
+      <p>Configured Wazuh SIEM to detect brute-force and privilege escalation events in a lab environment.</p>
       
       <h3>🎯 Objectives</h3>
       <ul>
@@ -36,78 +36,23 @@ permalink: /projects/
         <li>Monitor real-time security events</li>
       </ul>
       
-      <h3>🔧 Architecture</h3>
-      <div class="info-box">
-        <pre>
-┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│   Windows   │─────▶│   Wazuh     │─────▶│   Analyst   │
-│   Server    │      │   Manager   │      │  Dashboard  │
-└─────────────┘      └─────────────┘      └─────────────┘
-       │                     │                     
-       │                     │                     
-┌─────────────┐      ┌─────────────┐              
-│   Linux     │─────▶│  Elasticsearch│              
-│   Server    │      │   + Kibana   │              
-└─────────────┘      └─────────────┘              
-        </pre>
-      </div>
-      
-      <h3>💻 Custom Detection Rule Example</h3>
+      <h3>💻 Custom Detection Rule</h3>
       <div class="code-block">
         <pre><code>&lt;rule id="100001" level="10"&gt;
   &lt;if_group&gt;authentication_failed&lt;/if_group&gt;
   &lt;match&gt;Failed password&lt;/match&gt;
   &lt;frequency&gt;5&lt;/frequency&gt;
   &lt;timeframe&gt;300&lt;/timeframe&gt;
-  &lt;description&gt;Multiple failed login attempts - Possible brute force&lt;/description&gt;
+  &lt;description&gt;Multiple failed login attempts&lt;/description&gt;
 &lt;/rule&gt;</code></pre>
-      </div>
-      
-      <h3>📊 Detection Statistics</h3>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">247</div>
-          <div class="stat-label">Alerts Generated</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">15</div>
-          <div class="stat-label">True Positives</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Critical Events</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">99.2%</div>
-          <div class="stat-label">Uptime</div>
-        </div>
-      </div>
-      
-      <h3>🖼️ Dashboard Screenshot</h3>
-      <div class="image-container">
-        <img src="/shubhdeepsingh/assets/images/wazuh-dashboard-demo.png" alt="Wazuh Dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="image-placeholder" style="display: none;">
-          <p>📊 Dashboard Screenshot</p>
-          <p style="font-size: 14px;">Add your screenshot: /assets/images/wazuh-dashboard.png</p>
-        </div>
       </div>
       
       <h3>✅ Key Achievements</h3>
       <ul>
-        <li>Successfully detected 15 simulated attacks including brute-force and privilege escalation</li>
-        <li>Reduced alert response time from 15 minutes to under 2 minutes</li>
-        <li>Created 10 custom detection rules for organization-specific threats</li>
-        <li>Integrated with Slack for real-time notifications</li>
+        <li>Successfully detected 15 simulated attacks</li>
+        <li>Reduced alert response time to under 2 minutes</li>
+        <li>Created 10 custom detection rules</li>
       </ul>
-      
-      <h3>📚 Skills Gained</h3>
-      <div class="tag-container">
-        <span class="tag">Wazuh SIEM</span>
-        <span class="tag">Log Analysis</span>
-        <span class="tag">Custom Rules</span>
-        <span class="tag">Threat Detection</span>
-        <span class="tag">Incident Response</span>
-      </div>
     </div>
   </div>
 
@@ -121,124 +66,35 @@ permalink: /projects/
     <div class="accordion-content">
       <div class="project-meta">
         <span><strong>Type:</strong> Email Security</span>
-        <span><strong>Tools:</strong> Email headers, URLScan.io, VirusTotal</span>
+        <span><strong>Tools:</strong> Email headers, URLScan.io</span>
         <span><strong>Duration:</strong> 1 week</span>
       </div>
       
       <h3>📋 Overview</h3>
-      <p>Analyzed phishing samples, extracted Indicators of Compromise (IOCs), and documented response actions. Created a comprehensive playbook for phishing email investigation.</p>
+      <p>Analyzed phishing samples, extracted IOCs, and documented response actions.</p>
       
-      <h3>🔍 Analysis Process</h3>
-      <div class="step-container">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h4>Email Header Analysis</h4>
-            <p>Extract sender info, routing, SPF/DKIM/DMARC</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h4>URL/Attachment Analysis</h4>
-            <p>Scan links and files for malicious content</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h4>IOC Extraction</h4>
-            <p>Document IPs, domains, file hashes</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h4>Response Actions</h4>
-            <p>Block, quarantine, and notify users</p>
-          </div>
-        </div>
-      </div>
-      
-      <h3>📧 Sample Email Header Analysis</h3>
+      <h3>📧 Sample Email Analysis</h3>
       <div class="code-block">
         <pre><code>From: IT Support &lt;support@fakec0mpany.com&gt;
-Return-Path: &lt;noreply@suspicious-domain.tk&gt;
-Received: from mail.suspicious-domain.tk (unknown [185.220.101.45])
 Authentication-Results: FAIL (SPF)
 X-Spam-Score: 8.5
 
 Red Flags:
 ❌ Sender domain mismatch
 ❌ Failed SPF check
-❌ Suspicious Return-Path
 ❌ High spam score</code></pre>
-      </div>
-      
-      <h3>🎯 IOCs Extracted</h3>
-      <table class="ioc-table">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Indicator</th>
-            <th>Threat Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>IP Address</td>
-            <td>185.220.101.45</td>
-            <td><span class="badge-high">High</span></td>
-          </tr>
-          <tr>
-            <td>Domain</td>
-            <td>fakec0mpany.com</td>
-            <td><span class="badge-high">High</span></td>
-          </tr>
-          <tr>
-            <td>Domain</td>
-            <td>suspicious-domain.tk</td>
-            <td><span class="badge-medium">Medium</span></td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td>noreply@suspicious-domain.tk</td>
-            <td><span class="badge-medium">Medium</span></td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h3>📊 Analysis Results</h3>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">25</div>
-          <div class="stat-label">Emails Analyzed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">18</div>
-          <div class="stat-label">Confirmed Phishing</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">42</div>
-          <div class="stat-label">IOCs Extracted</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Blocked</div>
-        </div>
       </div>
       
       <h3>✅ Outcomes</h3>
       <ul>
-        <li>Identified and blocked 18 phishing campaigns targeting organization</li>
-        <li>Created comprehensive phishing analysis playbook</li>
-        <li>Trained 50+ employees on phishing identification</li>
-        <li>Reduced phishing click rate by 65%</li>
+        <li>Blocked 18 phishing campaigns</li>
+        <li>Created comprehensive playbook</li>
+        <li>Reduced click rate by 65%</li>
       </ul>
     </div>
   </div>
 
-  <!-- Project 3: Threat Hunting Project -->
+  <!-- Project 3: Threat Hunting -->
   <div class="project-accordion">
     <button class="accordion-header">
       <span class="accordion-icon">🔎</span>
@@ -253,79 +109,21 @@ Red Flags:
       </div>
       
       <h3>📋 Overview</h3>
-      <p>Used Sysmon logs and KQL/Splunk queries to detect suspicious PowerShell activity and potential malware execution in the environment.</p>
+      <p>Used Sysmon logs and KQL queries to detect suspicious PowerShell activity.</p>
       
-      <h3>🎯 Hunting Hypothesis</h3>
-      <div class="alert-box">
-        <strong>💡 Hypothesis:</strong> Attackers are using PowerShell for fileless malware execution and lateral movement in the network.
-      </div>
-      
-      <h3>🔍 Detection Queries</h3>
-      
-      <h4>Query 1: Encoded PowerShell Commands</h4>
+      <h3>🔍 Detection Query</h3>
       <div class="code-block">
         <pre><code>index=windows EventCode=4688 
-| where CommandLine contains "-encodedcommand" OR CommandLine contains "-enc"
-| table _time, User, ComputerName, CommandLine
-| sort - _time</code></pre>
+| where CommandLine contains "-encodedcommand"
+| table _time, User, ComputerName, CommandLine</code></pre>
       </div>
       
-      <h4>Query 2: Suspicious Network Connections</h4>
-      <div class="code-block">
-        <pre><code>EventID:3 (Image:*\\powershell.exe OR Image:*\\cmd.exe)
-| where DestinationPort in (4444, 5555, 8080, 8443)
-| project TimeGenerated, Computer, DestinationIp, DestinationPort</code></pre>
-      </div>
-      
-      <h3>📊 Hunt Results</h3>
-      <div class="chart-container">
-        <div class="chart-placeholder">
-          <p>📈 PowerShell Execution Trend</p>
-          <div class="simple-bar-chart">
-            <div class="bar" style="height: 60%; --bar-color: #3b82f6;">
-              <span class="bar-label">Week 1<br>120</span>
-            </div>
-            <div class="bar" style="height: 85%; --bar-color: #f59e0b;">
-              <span class="bar-label">Week 2<br>170</span>
-            </div>
-            <div class="bar" style="height: 100%; --bar-color: #ef4444;">
-              <span class="bar-label">Week 3<br>200</span>
-            </div>
-            <div class="bar" style="height: 45%; --bar-color: #10b981;">
-              <span class="bar-label">Week 4<br>90</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <h3>⚠️ Key Findings</h3>
+      <h3>⚠️ Findings</h3>
       <ul>
-        <li>Detected 5 instances of encoded PowerShell commands on developer workstations</li>
-        <li>Identified 3 systems with suspicious outbound connections to known bad IPs</li>
-        <li>Found evidence of PowerShell Empire framework on 1 compromised host</li>
-        <li>Discovered 12 users with unnecessary admin privileges</li>
+        <li>Detected 5 encoded PowerShell commands</li>
+        <li>Identified 3 suspicious outbound connections</li>
+        <li>Found PowerShell Empire framework traces</li>
       </ul>
-      
-      <h3>🛡️ Remediation Actions</h3>
-      <div class="recommendation-box">
-        <ul>
-          <li>Isolated 3 compromised systems from network</li>
-          <li>Implemented PowerShell constrained language mode</li>
-          <li>Enhanced logging with Script Block Logging</li>
-          <li>Removed unnecessary admin privileges from 12 accounts</li>
-          <li>Created new detection rules for PowerShell abuse</li>
-        </ul>
-      </div>
-      
-      <h3>📚 Skills Gained</h3>
-      <div class="tag-container">
-        <span class="tag">Threat Hunting</span>
-        <span class="tag">Sysmon</span>
-        <span class="tag">KQL</span>
-        <span class="tag">Splunk SPL</span>
-        <span class="tag">PowerShell Forensics</span>
-        <span class="tag">MITRE ATT&CK</span>
-      </div>
     </div>
   </div>
 
@@ -339,88 +137,30 @@ Red Flags:
     <div class="accordion-content">
       <div class="project-meta">
         <span><strong>Type:</strong> Network Security</span>
-        <span><strong>Tools:</strong> Wireshark, Suricata, tcpdump</span>
+        <span><strong>Tools:</strong> Wireshark, Suricata</span>
         <span><strong>Duration:</strong> 2 weeks</span>
       </div>
       
       <h3>📋 Overview</h3>
-      <p>Investigated packet captures for Command & Control (C2) communication using Wireshark and Suricata. Identified malicious traffic patterns and extracted network-based IOCs.</p>
-      
-      <h3>🔍 Analysis Methodology</h3>
-      <ol>
-        <li><strong>Capture:</strong> Collect network traffic using tcpdump</li>
-        <li><strong>Filter:</strong> Identify suspicious protocols and ports</li>
-        <li><strong>Analyze:</strong> Deep packet inspection with Wireshark</li>
-        <li><strong>Correlate:</strong> Match with known C2 signatures</li>
-        <li><strong>Report:</strong> Document findings and IOCs</li>
-      </ol>
+      <p>Investigated packet captures for C2 communication using Wireshark and Suricata.</p>
       
       <h3>🚨 Detected C2 Communication</h3>
       <div class="code-block">
         <pre><code>Protocol: HTTP
 Source: 10.0.50.25:49152
 Destination: 185.220.101.45:80
-User-Agent: Mozilla/5.0 (Windows NT 6.1) [Suspicious]
-
-HTTP POST /beacon
-Content: [Base64 Encoded Data]
-Frequency: Every 60 seconds
 
 Analysis:
 ✓ Regular beacon pattern detected
-✓ Non-standard User-Agent string  
 ✓ Encrypted payload in POST requests
 ✓ Known malicious IP (C2 server)</code></pre>
       </div>
       
-      <h3>📊 Traffic Analysis Results</h3>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">2.5 GB</div>
-          <div class="stat-label">Traffic Analyzed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">8</div>
-          <div class="stat-label">C2 Channels</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Compromised Hosts</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Malware Families</div>
-        </div>
-      </div>
-      
-      <h3>🔒 Suricata Rules Created</h3>
-      <div class="code-block">
-        <pre><code>alert http any any -&gt; any any (
-  msg:"Possible C2 Beacon - Regular POST Requests";
-  flow:established,to_server;
-  content:"POST"; http_method;
-  content:"/beacon"; http_uri;
-  threshold:type both, track by_src, count 10, seconds 600;
-  sid:1000001;
-  rev:1;
-)</code></pre>
-      </div>
-      
-      <h3>🖼️ Wireshark Analysis</h3>
-      <div class="image-container">
-        <img src="/shubhdeepsingh/assets/images/wireshark-analysis.png" alt="Wireshark Analysis" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="image-placeholder" style="display: none;">
-          <p>🔍 Wireshark Packet Analysis</p>
-          <p style="font-size: 14px;">Add screenshot: /assets/images/wireshark-analysis.png</p>
-        </div>
-      </div>
-      
       <h3>✅ Outcomes</h3>
       <ul>
-        <li>Successfully identified 8 active C2 channels in network</li>
-        <li>Blocked 3 malicious IP addresses at firewall</li>
-        <li>Created 5 custom Suricata rules for ongoing detection</li>
-        <li>Remediated 15 compromised endpoints</li>
+        <li>Identified 8 active C2 channels</li>
+        <li>Blocked 3 malicious IP addresses</li>
+        <li>Created 5 custom Suricata rules</li>
       </ul>
     </div>
   </div>
@@ -428,7 +168,6 @@ Analysis:
 </section>
 
 <style>
-/* Accordion Base Styles */
 .project-accordion {
   margin-bottom: 15px;
   border: 1px solid var(--border-color);
@@ -489,7 +228,7 @@ Analysis:
 }
 
 .accordion-content.active {
-  max-height: 10000px;
+  max-height: 5000px;
   padding: 20px;
 }
 
@@ -497,7 +236,6 @@ Analysis:
   transform: rotate(45deg);
 }
 
-/* Meta Info */
 .project-meta {
   display: flex;
   gap: 20px;
@@ -510,21 +248,11 @@ Analysis:
   color: var(--text-secondary);
 }
 
-/* Content Styles */
 .accordion-content h3 {
   color: var(--accent-primary);
-  margin-top: 30px;
-  margin-bottom: 15px;
-  font-size: 20px;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 8px;
-}
-
-.accordion-content h4 {
-  color: var(--text-primary);
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .accordion-content p {
@@ -533,8 +261,7 @@ Analysis:
   color: var(--text-secondary);
 }
 
-.accordion-content ul,
-.accordion-content ol {
+.accordion-content ul {
   margin: 15px 0;
   padding-left: 25px;
 }
@@ -545,53 +272,6 @@ Analysis:
   color: var(--text-secondary);
 }
 
-/* Alert and Info Boxes */
-.alert-box {
-  background: #fff3cd;
-  border-left: 4px solid #ffc107;
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: 5px;
-  color: #856404;
-}
-
-[data-theme="dark"] .alert-box {
-  background: #3d3419;
-  color: #ffd966;
-}
-
-.info-box {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-.info-box pre {
-  margin: 0;
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--text-primary);
-}
-
-.recommendation-box {
-  background: #d1ecf1;
-  border-left: 4px solid #0c5460;
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: 5px;
-  color: #0c5460;
-}
-
-[data-theme="dark"] .recommendation-box {
-  background: #1a3a40;
-  color: #a8dadc;
-}
-
-/* Code Blocks */
 .code-block {
   background: #1e1e1e;
   color: #d4d4d4;
@@ -605,7 +285,6 @@ Analysis:
 [data-theme="light"] .code-block {
   background: #f6f8fa;
   color: #24292f;
-  border: 1px solid #d0d7de;
 }
 
 .code-block pre {
@@ -615,220 +294,41 @@ Analysis:
   line-height: 1.6;
 }
 
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .project-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
+</style>
 
-.stat-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-primary);
-}
-
-.stat-number {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--accent-primary);
-  margin-bottom: 5px;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-/* Tags */
-.tag-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.tag {
-  background: var(--accent-primary);
-  color: var(--bg-primary);
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-/* IOC Table */
-.ioc-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 14px;
-}
-
-.ioc-table thead {
-  background: var(--bg-primary);
-}
-
-.ioc-table th {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 2px solid var(--border-color);
-  color: var(--accent-primary);
-  font-weight: bold;
-}
-
-.ioc-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border-color);
-  color: var(--text-secondary);
-}
-
-.ioc-table tr:hover {
-  background: var(--bg-primary);
-}
-
-.badge-high {
-  background: #ef4444;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.badge-medium {
-  background: #f59e0b;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* Step Container */
-.step-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.step {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 15px;
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-}
-
-.step-number {
-  background: var(--accent-primary);
-  color: var(--bg-primary);
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.step-content h4 {
-  margin: 0 0 5px 0;
-  font-size: 14px;
-  color: var(--accent-primary);
-}
-
-.step-content p {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-/* Images */
-.image-container {
-  margin: 20px 0;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.image-placeholder {
-  background: var(--bg-primary);
-  padding: 40px;
-  text-align: center;
-  color: var(--text-secondary);
-}
-
-.image-placeholder p:first-child {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-/* Simple Bar Chart */
-.chart-placeholder {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.chart-placeholder > p {
-  text-align: center;
-  font-weight: bold;
-  color: var(--accent-primary);
-  margin-bottom: 20px;
-}
-
-.simple-bar-chart {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  height: 200px;
-  gap: 10px;
-}
-
-.bar {
-  flex: 1;
-  background: var(--bar-color, var(--accent-primary));
-  border-radius: 5px 5px 0 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 10px;
-  transition: opacity 0.3s ease;
-  position: relative;
-}
-
-.bar:hover {
-  opacity: 0.8;
-}
-
-.bar-label {
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-}
-
-/* Responsive */
-@media (max
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const accordion = this.parentElement;
+      const content = accordion.querySelector('.accordion-content');
+      const isActive = accordion.classList.contains('active');
+      
+      // Close all accordions
+      document.querySelectorAll('.project-accordion').forEach(acc => {
+        acc.classList.remove('active');
+        acc.querySelector('.accordion-content').classList.remove('active');
+      });
+      
+      // Open clicked accordion if it wasn't active
+      if (!isActive) {
+        accordion.classList.add('active');
+        content.classList.add('active');
+      }
+    });
+  });
+});
+</script>
